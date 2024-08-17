@@ -6,7 +6,7 @@ public class WorldController : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<float> gravityWorlds;
-    public GameObject player;
+    public float activiteGravityScale;
     int i = 0;
     void Start()
     {
@@ -19,7 +19,11 @@ public class WorldController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             i++;
-            player.GetComponent<Rigidbody2D>().gravityScale = gravityWorlds[i];
+            if (i >= gravityWorlds.Count)
+            {
+                i = 0;
+            }
+            activiteGravityScale = gravityWorlds[i];
         }
     }
 }
