@@ -13,16 +13,18 @@ public class BorderCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("hit");
-        if (collision.collider.CompareTag(BORDER))
+        if (collision.collider.CompareTag("Player"))
         {
             coll.isTrigger = true;
+            Debug.Log("true" + name);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(BORDER))
+        if (collision.CompareTag("Player"))
         {
             coll.isTrigger = false;
+            Debug.Log("false" + name);
         }
     }
 }
