@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
-public class DragAndDrop : MonoBehaviour
+public class DragDrop : MonoBehaviour
 {
     private bool _isDragging = false;
     private void Update()
