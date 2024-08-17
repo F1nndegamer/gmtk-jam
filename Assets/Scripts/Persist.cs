@@ -2,7 +2,7 @@
 
 public class Persist : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         DontDestroyOnLoad(gameObject);
     }

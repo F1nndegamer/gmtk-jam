@@ -16,6 +16,26 @@ public class PersistentManagement : MonoBehaviour
     [Header("Data")]
     public int currentLevel;
 
+    void Awake()
+    {
+        if (Instance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    // only here for testing purposes, I'll remove it when we have a proper main menu
+    private void Start()
+    {
+        SceneManager.activeSceneChanged += SceneLoaded;
+
+        LoadScene("SampleScene");
+    }
+
     public void LoadScene(int sceneID)
     {
         sceneTransitionAnim.SetBool("On", true);
@@ -42,5 +62,10 @@ public class PersistentManagement : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         SceneManager.LoadScene(sceneID);
+    }
+
+    void SceneLoaded(Scene scene1, Scene scene2)
+    {
+        sceneTransitionAnim.SetBool("On", false);
     }
 }
