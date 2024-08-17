@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 152964019}
   - component: {fileID: 152964021}
   - component: {fileID: 152964020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 437253692}
   - component: {fileID: 437253694}
   - component: {fileID: 437253693}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 749127055}
   - component: {fileID: 749127057}
   - component: {fileID: 749127056}
+  - component: {fileID: 749127058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -899,12 +900,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749127053}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.43, y: -0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1467647561}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &749127055
 SpriteRenderer:
@@ -1030,6 +1031,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &749127058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749127053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f075e7d33b0ab4b90738b80df1f081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 10
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
+  trapTarget:
+    serializedVersion: 2
+    m_Bits: 0
+  isGrounded: 0
 --- !u!1001 &770378756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,7 +1467,6 @@ Transform:
   - {fileID: 1655768636}
   - {fileID: 152964019}
   - {fileID: 437253692}
-  - {fileID: 749127054}
   - {fileID: 1747775581}
   - {fileID: 1035765743}
   m_Father: {fileID: 0}
@@ -1653,7 +1674,7 @@ GameObject:
   - component: {fileID: 1655768636}
   - component: {fileID: 1655768637}
   - component: {fileID: 1655768638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2052,5 +2073,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1467647561}
+  - {fileID: 749127054}
   - {fileID: 770378756}
   - {fileID: 1644817912}
