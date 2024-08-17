@@ -65,6 +65,7 @@ public class WindowResizer : MonoBehaviour
 
             if (resizeDirection != ResizeDirection.None)
             {
+                SoundManager.Instance.PlayClickSound();
                 isResizing = true;
                 originalMousePosition = mousePosition;
                 originalScale = transform.localScale;
@@ -80,8 +81,9 @@ public class WindowResizer : MonoBehaviour
             ResizeWindow(delta);
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && isResizing)
         {
+            SoundManager.Instance.PlayReleaseSound();
             isResizing = false;
             resizeDirection = ResizeDirection.None;
         }

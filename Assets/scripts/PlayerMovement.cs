@@ -45,4 +45,8 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.BoxCast(transform.position, new Vector2(0.4f, 0.4f), 0f, -transform.up, 1f, ground);
     }
+    public bool IsWalking()
+    {
+        return moveDir != Vector2.zero;
+    }
 }

@@ -18,6 +18,7 @@ public class DragAndDrop : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider == coll)
             {
+                SoundManager.Instance.PlayClickSound();
                 isDragging = true;
                 distanceFromPosToMousePos = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
@@ -28,6 +29,7 @@ public class DragAndDrop : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+            SoundManager.Instance.PlayReleaseSound();
             isDragging = false;
         }
     }
