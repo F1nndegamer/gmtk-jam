@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class WindowResizer : MonoBehaviour
 {
+    public event EventHandler OnCursorClicked;
+    public event EventHandler OnCursorReleased;
+
     private Vector3 originalMousePosition;
     private Vector3 originalScale;
     private Vector3 originalWindowPosition;
@@ -65,7 +69,8 @@ public class WindowResizer : MonoBehaviour
 
             if (resizeDirection != ResizeDirection.None)
             {
-                SoundManager.Instance.PlayClickSound();
+                OnCursorClicked?.Invoke(this, EventArgs.Empty);
+
                 isResizing = true;
                 originalMousePosition = mousePosition;
                 originalScale = transform.localScale;
@@ -83,7 +88,8 @@ public class WindowResizer : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isResizing)
         {
-            SoundManager.Instance.PlayReleaseSound();
+            OnCursorReleased?.Invoke(this, EventArgs.Empty);
+
             isResizing = false;
             resizeDirection = ResizeDirection.None;
         }
