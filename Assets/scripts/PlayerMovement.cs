@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 12;
     public LayerMask ground;
-    public LayerMask trapTarget;
     [SerializeField] bool isGrounded;
     void Start()
     {

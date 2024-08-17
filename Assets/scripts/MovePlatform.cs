@@ -15,8 +15,6 @@ public class MovePlatform : MonoBehaviour
 
         transform.position = Vector2.Lerp(transform.position, target, speed * Time.deltaTime); //I will try to make this code more effective, I don't like it at the moment.
 
-        Debug.Log(Vector2.Lerp(transform.position, target, speed * Time.deltaTime));
-
         float distance = (target - (Vector2)transform.position).magnitude;
 
         if (distance < speed)
