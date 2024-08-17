@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class DragAndDrop : MonoBehaviour
 {
+    public event EventHandler OnCursorClicked;
+    public event EventHandler OnCursorReleased;
+
     private bool isDragging = false;
     private Vector3 distanceFromPosToMousePos;
     private Collider2D coll;
@@ -18,7 +22,8 @@ public class DragAndDrop : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider == coll)
             {
-                SoundManager.Instance.PlayClickSound();
+                OnCursorClicked?.Invoke(this, EventArgs.Empty);
+                
                 isDragging = true;
                 distanceFromPosToMousePos = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
@@ -29,7 +34,8 @@ public class DragAndDrop : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            SoundManager.Instance.PlayReleaseSound();
+            OnCursorReleased?.Invoke(this, EventArgs.Empty);
+
             isDragging = false;
         }
     }
