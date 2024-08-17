@@ -30,6 +30,7 @@ public class Key : MonoBehaviour
     private void UseKeyOnDoor(Transform door)
     {
         doormove = true;
+        isPickedUp = false;
         targetPosition = new Vector2(door.position.x, door.position.y + 3f); // Set the target position for the door
          // Destroy the key after using it
     }
