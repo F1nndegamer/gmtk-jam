@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a4418727ee1874994cfa87d2aacff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreenAnim: {fileID: 0}
+  victoryScreenAnim: {fileID: 798233619}
 --- !u!1 &1060947686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 986998962015653598, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ea809995be9ad44b8d4c3b4e60ca1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryPoint: {fileID: 0}
+  victoryPoint: {fileID: 1035765746}
 --- !u!4 &1348759701
 Transform:
   m_ObjectHideFlags: 0
