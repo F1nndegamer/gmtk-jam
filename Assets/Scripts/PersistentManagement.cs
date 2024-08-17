@@ -28,12 +28,11 @@ public class PersistentManagement : MonoBehaviour
         }
     }
 
-    // only here for testing purposes, I'll remove it when we have a proper main menu
     private void Start()
     {
         SceneManager.activeSceneChanged += SceneLoaded;
 
-        LoadScene("SampleScene");
+        LoadScene(1);
     }
 
     public void LoadScene(int sceneID)
