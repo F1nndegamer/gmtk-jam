@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617278770}
   - component: {fileID: 617278771}
+  - component: {fileID: 617278772}
   m_Layer: 0
   m_Name: ThePersistent
   m_TagString: Untagged
@@ -237,6 +238,18 @@ MonoBehaviour:
   sceneTransitionTime: 1
   sceneTransitionAnim: {fileID: 1197564982}
   currentLevel: 0
+--- !u!114 &617278772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617278769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc49f914666298b4b9bd69dd64055eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &870695810
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +579,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!222 &1197564985
 CanvasRenderer:

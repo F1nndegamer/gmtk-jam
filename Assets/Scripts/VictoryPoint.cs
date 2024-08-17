@@ -25,6 +25,7 @@ public class VictoryPoint : MonoBehaviour
     void CallVictory()
     {
         victoryScreenAnim.SetBool("On", true);
+        PersistentManagement.Instance.currentLevel++;
 
         OnVictory?.Invoke();
     }

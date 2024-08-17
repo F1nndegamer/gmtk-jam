@@ -11,6 +11,11 @@ public class UIFunctions : MonoBehaviour
         PersistentManagement.Instance.LoadScene(sceneID);
     }
 
+    public void LoadScene(int sceneID)
+    {
+        PersistentManagement.Instance.LoadScene(sceneID);
+    }
+
     public void PauseTheGame()
     {
         if (Time.timeScale == 0f)
