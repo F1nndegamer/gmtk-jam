@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class a : MonoBehaviour
+{
+    public float rotationSpeed = 90f;  
+    private bool isColliding = false;
+    public GameObject mech;
+    void Update()
+    {
+        if (isColliding)
+        {
+            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+            mech.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5);
+        }
+        else
+        {
+            mech.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        isColliding = true;
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        isColliding = true;
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isColliding = false;
+    }   
+}
