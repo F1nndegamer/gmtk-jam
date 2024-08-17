@@ -17,6 +17,8 @@ public class WindowResizer : MonoBehaviour
 
     public float maxWidth = 10f;  // Maximum width of the window
     public float maxHeight = 10f; // Maximum height of the window
+    public float minWidth = 2f;  // Minimum width of the window
+    public float minHeight = 2f; // Minimum height of the window
 
     public void SizerFunc()
     {
@@ -100,42 +102,42 @@ public class WindowResizer : MonoBehaviour
         switch (resizeDirection)
         {
             case ResizeDirection.Left:
-                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
                 newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
                 break;
             case ResizeDirection.Right:
-                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, minWidth, maxWidth);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
                 break;
             case ResizeDirection.Top:
-                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, minHeight, maxHeight);
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.Bottom:
-                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
                 newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
             case ResizeDirection.TopLeft:
-                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
-                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, minHeight, maxHeight);
                 newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.TopRight:
-                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
-                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, minWidth, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, minHeight, maxHeight);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.BottomLeft:
-                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
-                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
                 newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
                 newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
             case ResizeDirection.BottomRight:
-                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
-                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, minWidth, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
                 newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
