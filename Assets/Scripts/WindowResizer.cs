@@ -1,4 +1,5 @@
-using Unity.Burst.CompilerServices;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WindowResizer : MonoBehaviour
@@ -13,6 +14,10 @@ public class WindowResizer : MonoBehaviour
 
     public BoxCollider2D topLeftCollider, topRightCollider, bottomLeftCollider, bottomRightCollider;
     public BoxCollider2D leftCollider, rightCollider, topCollider, bottomCollider;
+
+    public float maxWidth = 10f;  // Maximum width of the window
+    public float maxHeight = 10f; // Maximum height of the window
+
     public void SizerFunc()
     {
         if (Input.GetMouseButtonDown(0))
@@ -95,44 +100,44 @@ public class WindowResizer : MonoBehaviour
         switch (resizeDirection)
         {
             case ResizeDirection.Left:
-                newScale.x = originalScale.x - delta.x;
-                newPosition.x = originalWindowPosition.x + delta.x / 2;
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
+                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
                 break;
             case ResizeDirection.Right:
-                newScale.x = originalScale.x + delta.x;
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
                 break;
             case ResizeDirection.Top:
-                newScale.y = originalScale.y + delta.y;
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.Bottom:
-                newScale.y = originalScale.y - delta.y;
-                newPosition.y = originalWindowPosition.y + delta.y / 2;
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
+                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
             case ResizeDirection.TopLeft:
-                newScale.x = originalScale.x - delta.x;
-                newScale.y = originalScale.y + delta.y;
-                newPosition.x = originalWindowPosition.x + delta.x / 2;
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
+                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.TopRight:
-                newScale.x = originalScale.x + delta.x;
-                newScale.y = originalScale.y + delta.y;
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y + delta.y, 0, maxHeight);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.BottomLeft:
-                newScale.x = originalScale.x - delta.x;
-                newScale.y = originalScale.y - delta.y;
-                newPosition.x = originalWindowPosition.x + delta.x / 2;
-                newPosition.y = originalWindowPosition.y + delta.y / 2;
+                newScale.x = Mathf.Clamp(originalScale.x - delta.x, 0, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
+                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
+                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
             case ResizeDirection.BottomRight:
-                newScale.x = originalScale.x + delta.x;
-                newScale.y = originalScale.y - delta.y;
+                newScale.x = Mathf.Clamp(originalScale.x + delta.x, 0, maxWidth);
+                newScale.y = Mathf.Clamp(originalScale.y - delta.y, 0, maxHeight);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
-                newPosition.y = originalWindowPosition.y + delta.y / 2;
+                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
                 break;
         }
 
