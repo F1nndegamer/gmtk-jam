@@ -7,6 +7,7 @@ TagManager:
   - Border
   - Door
   - Key
+  - Window
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Trap
-  - 
-  - 
+  - Player
+  - Border
   - 
   - 
   - 

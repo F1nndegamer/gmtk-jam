@@ -9,4 +9,16 @@ public class LevelManager : MonoBehaviour
 
     [Header("References")]
     public VictoryPoint victoryPoint;
+
+    private void Awake()
+    {
+        if (Instance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 }
