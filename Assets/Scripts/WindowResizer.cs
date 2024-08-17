@@ -7,18 +7,18 @@ public class WindowResizer : MonoBehaviour
     private Vector3 originalMousePosition;
     private Vector3 originalScale;
     private Vector3 originalWindowPosition;
-    private bool resizing;
+    private bool isResizing;
 
     private enum ResizeDirection { None, Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight }
     private ResizeDirection resizeDirection = ResizeDirection.None;
 
-    public BoxCollider2D topLeftCollider, topRightCollider, bottomLeftCollider, bottomRightCollider;
-    public BoxCollider2D leftCollider, rightCollider, topCollider, bottomCollider;
+    [SerializeField] private BoxCollider2D topLeftCollider, topRightCollider, bottomLeftCollider, bottomRightCollider;
+    [SerializeField] private BoxCollider2D leftCollider, rightCollider, topCollider, bottomCollider;
 
-    public float maxWidth = 10f;  // Maximum width of the window
-    public float maxHeight = 10f; // Maximum height of the window
-    public float minWidth = 2f;  // Minimum width of the window
-    public float minHeight = 2f; // Minimum height of the window
+    [SerializeField] private float maxWidth = 10f;  // Maximum width of the window
+    [SerializeField] private float maxHeight = 10f; // Maximum height of the window
+    [SerializeField] private float minWidth = 2f;  // Minimum width of the window
+    [SerializeField] private float minHeight = 2f; // Minimum height of the window
 
     public void SizerFunc()
     {
@@ -65,14 +65,14 @@ public class WindowResizer : MonoBehaviour
 
             if (resizeDirection != ResizeDirection.None)
             {
-                resizing = true;
+                isResizing = true;
                 originalMousePosition = mousePosition;
                 originalScale = transform.localScale;
                 originalWindowPosition = transform.position;
             }
         }
 
-        if (Input.GetMouseButton(0) && resizing)
+        if (Input.GetMouseButton(0) && isResizing)
         {
             Vector3 currentMousePosition = GetMouseWorldPosition();
             Vector3 delta = currentMousePosition - originalMousePosition;
@@ -82,7 +82,7 @@ public class WindowResizer : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            resizing = false;
+            isResizing = false;
             resizeDirection = ResizeDirection.None;
         }
     }
@@ -103,7 +103,7 @@ public class WindowResizer : MonoBehaviour
         {
             case ResizeDirection.Left:
                 newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
-                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
+                newPosition.x = originalWindowPosition.x + delta.x / 2;
                 break;
             case ResizeDirection.Right:
                 newScale.x = Mathf.Clamp(originalScale.x + delta.x, minWidth, maxWidth);
@@ -115,12 +115,12 @@ public class WindowResizer : MonoBehaviour
                 break;
             case ResizeDirection.Bottom:
                 newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
-                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
+                newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.TopLeft:
                 newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
                 newScale.y = Mathf.Clamp(originalScale.y + delta.y, minHeight, maxHeight);
-                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
+                newPosition.x = originalWindowPosition.x + delta.x / 2;
                 newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.TopRight:
@@ -132,17 +132,16 @@ public class WindowResizer : MonoBehaviour
             case ResizeDirection.BottomLeft:
                 newScale.x = Mathf.Clamp(originalScale.x - delta.x, minWidth, maxWidth);
                 newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
-                newPosition.x = originalWindowPosition.x + (originalScale.x - newScale.x) / 2;
-                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
+                newPosition.x = originalWindowPosition.x + delta.x / 2;
+                newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
             case ResizeDirection.BottomRight:
                 newScale.x = Mathf.Clamp(originalScale.x + delta.x, minWidth, maxWidth);
                 newScale.y = Mathf.Clamp(originalScale.y - delta.y, minHeight, maxHeight);
                 newPosition.x = originalWindowPosition.x + delta.x / 2;
-                newPosition.y = originalWindowPosition.y + (originalScale.y - newScale.y) / 2;
+                newPosition.y = originalWindowPosition.y + delta.y / 2;
                 break;
         }
-
         transform.localScale = newScale;
         transform.position = newPosition;
     }

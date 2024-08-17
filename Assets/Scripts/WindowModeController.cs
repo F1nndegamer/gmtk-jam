@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class WindowModeController : MonoBehaviour
 {
-    enum GrapOrSize { SizeMode, GrapMode }
-    [SerializeField] GrapOrSize mode;
-    public GameObject MaskWindow;
+    private enum GrapOrSize { SizeMode, GrapMode }
+    [SerializeField] private GrapOrSize mode;
+
     WindowResizer windowResizer;
     DragAndDrop dragAndDrop;
     // Start is called before the first frame update
     void Start()
     {
-        windowResizer = MaskWindow.GetComponent<WindowResizer>();
-        dragAndDrop = MaskWindow.GetComponent<DragAndDrop>();
+        windowResizer = GetComponent<WindowResizer>();
+        dragAndDrop = GetComponent<DragAndDrop>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ModeChanger();
+        if (Input.GetKeyDown(KeyCode.F)) ChangeMode();
         if (mode == GrapOrSize.SizeMode)
             windowResizer.SizerFunc();
         if (mode == GrapOrSize.GrapMode)
             dragAndDrop.GraperFunc();
     }
-    void ModeChanger()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-            if (mode == GrapOrSize.SizeMode)
-                mode = GrapOrSize.GrapMode;
-            else
-                mode = GrapOrSize.SizeMode;
-
+    public void ChangeMode()
+    {   
+        if (mode == GrapOrSize.SizeMode)
+        {
+            mode = GrapOrSize.GrapMode;
+        }
+        else
+        {
+            mode = GrapOrSize.SizeMode;
+        }
     }
 }
