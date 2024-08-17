@@ -6,7 +6,7 @@ public class WorldController : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<float> gravityWorlds;
-    public float activiteGravityScale;
+    public GameObject player;
     int i = 0;
     void Start()
     {
@@ -23,7 +23,7 @@ public class WorldController : MonoBehaviour
             {
                 i = 0;
             }
-            activiteGravityScale = gravityWorlds[i];
+            player.GetComponent<PlayerMovement>().activiteGravityScale = gravityWorlds[i];
         }
     }
 }
