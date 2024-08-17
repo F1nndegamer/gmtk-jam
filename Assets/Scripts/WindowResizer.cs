@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class WindowResizer : MonoBehaviour
 {
+    enum GraporSize { Size, Grap};
     private Vector3 originalMousePosition;
     private Vector3 originalPosition;
     private Vector3 originalScale;
     private float xScaleMultiplier;
     private float yScaleMultiplier;
-    private void Update()
+    public void SizerFunc()
     {
         if (Input.GetMouseButtonDown(0))
         {
