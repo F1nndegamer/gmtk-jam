@@ -30,10 +30,12 @@ public class WindowModeController : MonoBehaviour
         if (mode == GrapOrSize.SizeMode)
         {
             mode = GrapOrSize.GrapMode;
+            CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Hand_Open);
         }
         else
         {
             mode = GrapOrSize.SizeMode;
+            CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
         }
     }
 }

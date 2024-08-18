@@ -5,7 +5,7 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager Instance;
-    public enum CursorType { Default, Diagonal, DiagonalMirror, Horizontal, Vertical }
+    public enum CursorType { Default, Diagonal, DiagonalMirror, Horizontal, Vertical, Hand_Open, Hand_Closed }
     private CursorType cursorType;
     private Vector2 cursorHotspot;
     private WindowResizer currentWindow;
