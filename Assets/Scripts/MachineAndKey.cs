@@ -19,18 +19,18 @@ public class MachineAndKey : MonoBehaviour
     }
     private void Update()
     {
-        //allTrue = controllerList.All(x => x.isColliding);
-        //Debug.Log(allTrue);
-        //if (allTrue)
-        //{
-        //    machineObject.GetComponent<BoxCollider2D>().enabled = false;
-        //    machineObject.GetComponent<SpriteRenderer>().enabled = false;
-        //}
-        //else
-        //{
-        //    machineObject.GetComponent<BoxCollider2D>().enabled = true;
-        //    machineObject.GetComponent<SpriteRenderer>().enabled = true;
-        //}
+        allTrue = controllerList.All(x => x.isColliding);
+        Debug.Log(allTrue);
+        if (allTrue)
+        {
+            machineObject.GetComponent<BoxCollider2D>().enabled = false;
+            machineObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            machineObject.GetComponent<BoxCollider2D>().enabled = true;
+            machineObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
 
     }
     //public float rotationSpeed = 90f;
