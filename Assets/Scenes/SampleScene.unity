@@ -1352,6 +1352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545397194}
   - component: {fileID: 545397195}
+  - component: {fileID: 545397196}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1426,6 +1427,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &545397196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545397193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccab5dec522f41d44b887396f2042e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &749127053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1699,10 @@ PrefabInstance:
     - target: {fileID: 3435638784226885410, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
       propertyPath: m_Name
       value: MaskWindow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435638784226885410, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2170,6 +2187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaskWindow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3435638784226885410, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2531,6 +2552,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1937713323039024237, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2497428564316438049, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9

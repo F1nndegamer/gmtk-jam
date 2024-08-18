@@ -18,7 +18,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = GetMouseWorldPosition();
+            Vector3 mousePosition = CursorManager.Instance.GetMouseWorldPosition();
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider == coll)
             {
@@ -38,12 +38,6 @@ public class DragAndDrop : MonoBehaviour
 
             isDragging = false;
         }
-    }
-    private Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = Mathf.Abs(Camera.main.transform.position.z - transform.position.z);
-        return Camera.main.ScreenToWorldPoint(mouseScreenPosition);
     }
     private Vector3 GetFixedPos()
     {
