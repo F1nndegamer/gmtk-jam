@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MachineAndKey : MonoBehaviour
 {
-    enum WhereMove { Horizontal, Vertical }
-    [SerializeField] private WhereMove whereMove;
     public List<KeyController> controllerList;
     public GameObject machineObject;
     public int openSpeed;
@@ -21,13 +19,19 @@ public class MachineAndKey : MonoBehaviour
     }
     private void Update()
     {
-        allTrue = controllerList.All(x => x.isColliding);
-        Debug.Log(allTrue);
-        if (allTrue)
-            if (whereMove == WhereMove.Horizontal)
-                machineObject.GetComponent<Rigidbody2D>().velocity = new Vector2(openSpeed, 0);
-            else
-                machineObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0 , openSpeed);
+        //allTrue = controllerList.All(x => x.isColliding);
+        //Debug.Log(allTrue);
+        //if (allTrue)
+        //{
+        //    machineObject.GetComponent<BoxCollider2D>().enabled = false;
+        //    machineObject.GetComponent<SpriteRenderer>().enabled = false;
+        //}
+        //else
+        //{
+        //    machineObject.GetComponent<BoxCollider2D>().enabled = true;
+        //    machineObject.GetComponent<SpriteRenderer>().enabled = true;
+        //}
+
     }
     //public float rotationSpeed = 90f;
     //private bool isColliding = false;
