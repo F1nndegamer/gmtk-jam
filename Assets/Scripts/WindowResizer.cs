@@ -11,7 +11,7 @@ public class WindowResizer : MonoBehaviour
     private Vector3 originalMousePosition;
     private Vector3 originalScale;
     private Vector3 originalWindowPosition;
-    private bool isResizing;
+    private bool isResizing = false;
     
     public enum ResizeDirection { None, Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight }
     private ResizeDirection resizeDirection = ResizeDirection.None;
@@ -26,40 +26,43 @@ public class WindowResizer : MonoBehaviour
 
     public void SizerFunc()
     {
-        Vector3 mousePosition = GetMouseWorldPosition();
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-        if (hit.collider != null)
+        if (!isResizing && CursorManager.Instance.GetWindowResizer() == this)
         {
-            if (hit.collider == topLeftCollider || hit.collider == bottomRightCollider)
+            Vector3 mousePosition = CursorManager.Instance.GetMouseWorldPosition();
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            if (hit.collider != null)
             {
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.DiagonalMirror);
+                if (hit.collider == topLeftCollider || hit.collider == bottomRightCollider)
+                {
+                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.DiagonalMirror);
+                }
+                else if (hit.collider == topRightCollider || hit.collider == bottomLeftCollider)
+                {
+                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Diagonal);
+                }
+                else if (hit.collider == leftCollider || hit.collider == rightCollider)
+                {
+                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Horizontal);
+                }
+                else if (hit.collider == topCollider || hit.collider == bottomCollider)
+                {
+                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Vertical);
+                }
+                else if (hit.collider == windowCollider)
+                {
+                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
+                }
             }
-            else if (hit.collider == topRightCollider || hit.collider == bottomLeftCollider)
-            {
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Diagonal);
-            }
-            else if (hit.collider == leftCollider || hit.collider == rightCollider)
-            {
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Horizontal);
-            }
-            else if (hit.collider == topCollider || hit.collider == bottomCollider)
-            {
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Vertical);
-            }
-            else if (hit.collider == windowCollider)
+            else
             {
                 CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
             }
         }
-        else if (!isResizing)
-        {
-           CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
-        }
-
+        
         if (Input.GetMouseButtonDown(0))
         {
-            mousePosition = GetMouseWorldPosition();
-            hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            Vector3 mousePosition = CursorManager.Instance.GetMouseWorldPosition();
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider != null)
             {
                 if (hit.collider == topLeftCollider)
@@ -109,7 +112,7 @@ public class WindowResizer : MonoBehaviour
 
         if (Input.GetMouseButton(0) && isResizing)
         {
-            Vector3 currentMousePosition = GetMouseWorldPosition();
+            Vector3 currentMousePosition = CursorManager.Instance.GetMouseWorldPosition();
             Vector3 delta = currentMousePosition - originalMousePosition;
 
             ResizeWindow(delta);
@@ -122,13 +125,6 @@ public class WindowResizer : MonoBehaviour
             isResizing = false;
             resizeDirection = ResizeDirection.None;
         }
-    }
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = Mathf.Abs(Camera.main.transform.position.z - transform.position.z);
-        return Camera.main.ScreenToWorldPoint(mouseScreenPosition);
     }
 
     private void ResizeWindow(Vector3 delta)
