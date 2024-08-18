@@ -12,10 +12,10 @@ public class WindowResizer : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalWindowPosition;
     private bool isResizing;
-
-    private enum ResizeDirection { None, Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight }
+    
+    public enum ResizeDirection { None, Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight }
     private ResizeDirection resizeDirection = ResizeDirection.None;
-
+    [SerializeField] private BoxCollider2D windowCollider;
     [SerializeField] private BoxCollider2D topLeftCollider, topRightCollider, bottomLeftCollider, bottomRightCollider;
     [SerializeField] private BoxCollider2D leftCollider, rightCollider, topCollider, bottomCollider;
 
@@ -26,11 +26,40 @@ public class WindowResizer : MonoBehaviour
 
     public void SizerFunc()
     {
+        Vector3 mousePosition = GetMouseWorldPosition();
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        if (hit.collider != null)
+        {
+            if (hit.collider == topLeftCollider || hit.collider == bottomRightCollider)
+            {
+                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.DiagonalMirror);
+            }
+            else if (hit.collider == topRightCollider || hit.collider == bottomLeftCollider)
+            {
+                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Diagonal);
+            }
+            else if (hit.collider == leftCollider || hit.collider == rightCollider)
+            {
+                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Horizontal);
+            }
+            else if (hit.collider == topCollider || hit.collider == bottomCollider)
+            {
+                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Vertical);
+            }
+            else if (hit.collider == windowCollider)
+            {
+                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
+            }
+        }
+        else
+        {
+           CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = GetMouseWorldPosition();
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-
+            mousePosition = GetMouseWorldPosition();
+            hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider != null)
             {
                 if (hit.collider == topLeftCollider)

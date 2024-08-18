@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a077d95f29b54244f845a306d587df83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windowCollider: {fileID: 1937713323039024237}
   topLeftCollider: {fileID: 7690016915834311000}
   topRightCollider: {fileID: 7381858241228006982}
   bottomLeftCollider: {fileID: 6232672725663685698}
