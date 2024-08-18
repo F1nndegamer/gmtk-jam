@@ -4,15 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    Rigidbody2D rb2d;
-    Vector2 moveDir;
-    public Vector2 environmentVelocity;
-    public float speed = 5;
-    public float jumpForce = 12;
-    public LayerMask ground;
-    public LayerMask trapTarget;
-    [SerializeField] bool isGrounded;
+    [SerializeField] private Vector2 environmentVelocity;
+    [SerializeField] private float speed = 5;
+    [SerializeField] private float jumpForce = 12;
+    [SerializeField] private LayerMask ground;
+    [SerializeField] private LayerMask trapTarget;
+
+    private bool isGrounded; 
+    private Rigidbody2D rb2d;
+    private Vector2 moveDir;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();

@@ -17,12 +17,17 @@ public class CursorManager : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 mousePosition = GetMouseWorldPosition();
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-        if (hit && hit.collider.CompareTag("Window"))
+        if (Input.GetMouseButtonDown(0))
         {
-            currentWindow = hit.collider.GetComponent<WindowResizer>();
+            Vector3 mousePosition = GetMouseWorldPosition();
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            if (hit && hit.collider.CompareTag("Window"))
+            {
+                currentWindow = hit.collider.GetComponent<WindowResizer>();
+                Debug.Log("HIT A WINDOW");
+            }
         }
+        
     }
     
     public WindowResizer GetWindowResizer()
