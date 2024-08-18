@@ -1856,12 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f426acb140e7e47a60debdc841d5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorArray:
-  - {fileID: 2800000, guid: 32a5817db921df54bb3172e3ae23e4fc, type: 3}
-  - {fileID: 2800000, guid: a7ba65b011b021b4eb13dfd4b23c11ac, type: 3}
-  - {fileID: 2800000, guid: 1ad2f53a70029034bba0a85fa50a005e, type: 3}
-  - {fileID: 2800000, guid: 34e03085ec96ce84fb137aa8085f613b, type: 3}
-  - {fileID: 2800000, guid: 9c1f33c3a999da4419184ba9b6343fb5, type: 3}
+  cursorArraySO: {fileID: 11400000, guid: 512f850d7de97d545a1e763b5603263f, type: 2}
 --- !u!4 &1041201659
 Transform:
   m_ObjectHideFlags: 0

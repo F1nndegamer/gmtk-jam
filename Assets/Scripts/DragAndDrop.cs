@@ -18,7 +18,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if(!isDragging && CursorManager.Instance.GetWindowResizer() == this)
         {
-            CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Hand_Open);
+            CursorManager.Instance.ChangeCursor(CursorType.Hand_Open);
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,7 +28,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 OnCursorClicked?.Invoke(this, EventArgs.Empty);
 
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Hand_Closed);
+                CursorManager.Instance.ChangeCursor(CursorType.Hand_Closed);
                 isDragging = true;
                 distanceFromPosToMousePos = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
@@ -37,11 +37,11 @@ public class DragAndDrop : MonoBehaviour
         {
             transform.position = GetFixedPos();
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && isDragging)
         {
             OnCursorReleased?.Invoke(this, EventArgs.Empty);
 
-            CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Hand_Open);
+            CursorManager.Instance.ChangeCursor(CursorType.Hand_Open);
             isDragging = false;
         }
     }

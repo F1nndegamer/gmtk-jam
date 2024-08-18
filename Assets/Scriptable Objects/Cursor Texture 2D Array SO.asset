@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d25f5e785faeb64391e30b14857f823, type: 3}
+  m_Name: Cursor Texture 2D Array SO
+  m_EditorClassIdentifier: 
+  cursorTextureArray:
+  - {fileID: 2800000, guid: a5c97c6fa0f479242be286505e321c46, type: 3}
+  - {fileID: 2800000, guid: a7c3c128a0ac27f45b5e7ea70e8c9f3c, type: 3}
+  - {fileID: 2800000, guid: f1eed5f36ddc3d24a859dd1a39080e19, type: 3}
+  - {fileID: 2800000, guid: 26b15e2005ef6a84a8f2150ecbcabf68, type: 3}
+  - {fileID: 2800000, guid: 8b474bf7ebd979e4b87602a8d952a6bc, type: 3}
+  - {fileID: 2800000, guid: a7165f2182be5884f954c8bf86372806, type: 3}
+  - {fileID: 2800000, guid: 28c18362052b77b43b4454d3c65c9509, type: 3}

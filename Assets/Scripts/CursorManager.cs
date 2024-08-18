@@ -5,12 +5,11 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager Instance;
-    public enum CursorType { Default, Diagonal, DiagonalMirror, Horizontal, Vertical, Hand_Open, Hand_Closed }
     private CursorType cursorType;
     private Vector2 cursorHotspot;
     private WindowResizer currentWindow;
     
-    [SerializeField] private Texture2D[] cursorArray;
+    [SerializeField] private CursorTexture2DArraySO cursorArraySO;
 
     private void Awake()
     {
@@ -47,9 +46,9 @@ public class CursorManager : MonoBehaviour
             }
             else
             {
-                cursorHotspot = new Vector2(cursorArray[(int)cursorType].width/2, cursorArray[(int)cursorType].height/2);
+                cursorHotspot = new Vector2(cursorArraySO.GetTexture(cursorType).width/2, cursorArraySO.GetTexture(cursorType).height/2);
             }
-            Cursor.SetCursor(cursorArray[(int)cursorType], cursorHotspot, CursorMode.ForceSoftware);
+            Cursor.SetCursor(cursorArraySO.GetTexture(cursorType), cursorHotspot, CursorMode.ForceSoftware);
         }
     }
 }

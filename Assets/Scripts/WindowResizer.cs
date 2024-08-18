@@ -34,28 +34,28 @@ public class WindowResizer : MonoBehaviour
             {
                 if (hit.collider == topLeftCollider || hit.collider == bottomRightCollider)
                 {
-                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.DiagonalMirror);
+                    CursorManager.Instance.ChangeCursor(CursorType.DiagonalMirror);
                 }
                 else if (hit.collider == topRightCollider || hit.collider == bottomLeftCollider)
                 {
-                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Diagonal);
+                    CursorManager.Instance.ChangeCursor(CursorType.Diagonal);
                 }
                 else if (hit.collider == leftCollider || hit.collider == rightCollider)
                 {
-                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Horizontal);
+                    CursorManager.Instance.ChangeCursor(CursorType.Horizontal);
                 }
                 else if (hit.collider == topCollider || hit.collider == bottomCollider)
                 {
-                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Vertical);
+                    CursorManager.Instance.ChangeCursor(CursorType.Vertical);
                 }
                 else if (hit.collider == windowCollider)
                 {
-                    CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
+                    CursorManager.Instance.ChangeCursor(CursorType.Default);
                 }
             }
             else
             {
-                CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
+                CursorManager.Instance.ChangeCursor(CursorType.Default);
             }
         }
         
