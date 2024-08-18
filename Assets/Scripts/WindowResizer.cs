@@ -51,7 +51,7 @@ public class WindowResizer : MonoBehaviour
                 CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
             }
         }
-        else
+        else if (!isResizing)
         {
            CursorManager.Instance.ChangeCursor(CursorManager.CursorType.Default);
         }
