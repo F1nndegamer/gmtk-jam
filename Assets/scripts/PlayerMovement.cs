@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             rb2d.AddForce(new Vector2(rb2d.velocity.x, jumpForce), ForceMode2D.Impulse);
         if (rb2d.velocity.y < 0)
-            rb2d.gravityScale = 1.5f * 3f;
+            rb2d.gravityScale = 1.5f * 4f;
         else
-            rb2d.gravityScale = 3f;
+            rb2d.gravityScale = 4f;
     }
     void Movement()
     {

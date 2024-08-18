@@ -973,6 +973,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 7789664786169190094, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: maxWidth
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789664786169190094, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: maxHeight
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7947406461310795453, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
       propertyPath: m_TagString
       value: Border
