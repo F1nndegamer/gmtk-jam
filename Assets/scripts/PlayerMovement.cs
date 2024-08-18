@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rb2d;
     Vector2 moveDir;
+    public Vector2 environmentVelocity;
     public float speed = 5;
     public float jumpForce = 12;
     public LayerMask ground;
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Movement()
     {
         moveDir = new Vector2(Input.GetAxis("Horizontal") * speed, rb2d.velocity.y);
-        rb2d.velocity = moveDir;
+        rb2d.velocity = moveDir + environmentVelocity;
     }
     void GroundCheck()
     {
