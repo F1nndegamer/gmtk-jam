@@ -27,16 +27,16 @@ public class MovingPlatform : MonoBehaviour, IVisibilityCheck
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            collision.gameObject.GetComponent<PlayerMovement>().environmentVelocity = rb2D.velocity;
+            collision.gameObject.GetComponent<PlayerMovement>().SetEnvironmentVelocity(rb2D.velocity);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
-           collision.gameObject.GetComponent<PlayerMovement>().environmentVelocity = rb2D.velocity;
+           collision.gameObject.GetComponent<PlayerMovement>().SetEnvironmentVelocity(rb2D.velocity);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            collision.gameObject.GetComponent<PlayerMovement>().environmentVelocity = Vector2.zero;
+            collision.gameObject.GetComponent<PlayerMovement>().SetEnvironmentVelocity(rb2D.velocity);
     }
 }

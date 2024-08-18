@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 environmentVelocity;
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpForce = 12;
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask trapTarget;
 
+    private Vector2 environmentVelocity;
     private bool isGrounded; 
     private Rigidbody2D rb2d;
     private Vector2 moveDir;
+    private float horizontal;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -39,15 +41,24 @@ public class PlayerMovement : MonoBehaviour
     }
     void Movement()
     {
-        moveDir = new Vector2(Input.GetAxis("Horizontal") * speed, rb2d.velocity.y);
+        horizontal = Input.GetAxisRaw("Horizontal");
+        moveDir = new Vector2(horizontal * speed, rb2d.velocity.y);
         rb2d.velocity = moveDir + environmentVelocity;
+        if (Mathf.Abs(moveDir.x) > 0.01f)
+        {
+            transform.rotation = Quaternion.Euler(0, horizontal > 0 ? 0 : 180, 0);
+        }
     }
     void GroundCheck()
     {
-        isGrounded = Physics2D.BoxCast(transform.position, new Vector2(0.4f, 0.4f), 0f, -transform.up, 1f, ground);
+        isGrounded = Physics2D.BoxCast(transform.position, new Vector2(1f, 1f), 0f, -transform.up, 1f, ground);
     }
     public bool IsWalking()
     {
-        return moveDir.x != 0;
+        return Mathf.Abs(moveDir.x) > 0.01f && isGrounded;
+    }
+    public void SetEnvironmentVelocity(Vector2 velocity)
+    {
+        environmentVelocity = velocity;
     }
 }
