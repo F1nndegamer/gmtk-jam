@@ -5,9 +5,11 @@ using UnityEngine;
 public class ScaleWithWindow : MonoBehaviour
 {
     private enum ScaleMode { Uniform, Independant }
+    private enum IndependantAxis { BothAxis, X, Y }
     [SerializeField] private GameObject MaskWindow;
     [SerializeField] float scaleSpeed = 0.5f;
     [SerializeField] ScaleMode scaleMode = ScaleMode.Uniform;
+    [SerializeField] IndependantAxis scalingAxis = IndependantAxis.BothAxis;
     private Vector3 initialScale;
     private Vector3 initialMaskScale;
 
@@ -29,7 +31,18 @@ public class ScaleWithWindow : MonoBehaviour
                 transform.localScale = new Vector3(uniformScale, uniformScale, transform.localScale.z);
                 break;
             case ScaleMode.Independant:
-                transform.localScale = new Vector3(newScale.x, newScale.y, transform.localScale.z);
+                switch (scalingAxis)
+                {
+                    case IndependantAxis.BothAxis:
+                        transform.localScale = new Vector3(newScale.x, newScale.y, transform.localScale.z);
+                        break;
+                    case IndependantAxis.X:
+                        transform.localScale = new Vector3(Mathf.Max(newScale.x, newScale.y), transform.localScale.y, transform.localScale.z);
+                        break;
+                    case IndependantAxis.Y:
+                        transform.localScale = new Vector3(transform.localScale.x, Mathf.Max(newScale.x, newScale.y), transform.localScale.z);
+                        break;
+                }
                 break;
         }
 
