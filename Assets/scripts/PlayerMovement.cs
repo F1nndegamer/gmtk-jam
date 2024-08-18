@@ -48,6 +48,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public bool IsWalking()
     {
-        return moveDir != Vector2.zero;
+        return moveDir.x != 0;
     }
 }
