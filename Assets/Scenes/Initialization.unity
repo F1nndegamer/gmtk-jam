@@ -235,7 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b772ca4e7458cf47befb52a4abb0d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneTransitionTime: 1
+  sceneTransitionTime: 0.8
+  levelManagerID: 6
   sceneTransitionAnim: {fileID: 1197564982}
   currentLevel: 0
 --- !u!114 &617278772
