@@ -1675,7 +1675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11af332b32a34d48ac70b8659438275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VictoryPoint: {fileID: 199872761}
 --- !u!1001 &770378756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1684,6 +1683,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390395222552166532, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452248716781602907, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550311719528095032, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027530256474654289, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2497428564316438049, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.09
@@ -1728,6 +1743,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaskWindow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5626152969628145078, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619720433211447373, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387279104540911700, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506293943042518112, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1762,7 +1793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f426acb140e7e47a60debdc841d5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDragging: 0
+  IsResizing: 0
   cursorArraySO: {fileID: 11400000, guid: 512f850d7de97d545a1e763b5603263f, type: 2}
+  cursorDetectLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &792661697
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,7 +1927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9416f57415ce3a74eabf4fd92109432c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VictoryPoint: {fileID: 1035765745}
 --- !u!1 &891454147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,6 +2212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClipRefsSO: {fileID: 11400000, guid: 5949085661c9c354ab00397514be6d83, type: 2}
   volume: 1
+  turning: 0
 --- !u!4 &1038759456
 Transform:
   m_ObjectHideFlags: 0
