@@ -23,7 +23,7 @@ public class VictoryPoint : MonoBehaviour
     /// </summary>
     void CallVictorya()
     {
-        if(PersistentManagement.Instance.currentLevel == LevelManager.Instance.levelID) PersistentManagement.Instance.currentLevel++;
+        PersistentManagement.Instance.currentLevel++;
 
         OnVictory?.Invoke();
     }
