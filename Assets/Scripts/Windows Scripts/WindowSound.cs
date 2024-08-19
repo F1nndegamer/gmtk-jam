@@ -10,11 +10,7 @@ public class WindowSound : MonoBehaviour
     [SerializeField] private WindowResizer windowResizer;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        dragAndDrop.OnCursorClicked += DragAndDrop_OnCursorClicked;
-        dragAndDrop.OnCursorReleased += DragAndDrop_OnCursorReleased;
-        windowResizer.OnCursorClicked += WindowResizer_OnCursorClicked;
-        windowResizer.OnCursorReleased += WindowResizer_OnCursorReleased;
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     private void WindowResizer_OnCursorReleased(object sender, System.EventArgs e)

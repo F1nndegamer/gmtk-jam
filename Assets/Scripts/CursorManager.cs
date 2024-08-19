@@ -7,30 +7,32 @@ public class CursorManager : MonoBehaviour
     public static CursorManager Instance;
     private CursorType cursorType;
     private Vector2 cursorHotspot;
-    private WindowResizer currentWindow;
-    
+    private WindowBehavior currentWindow;
+    public bool IsDragging;
+    public bool IsResizing;
     [SerializeField] private CursorTexture2DArraySO cursorArraySO;
-
+    [SerializeField] private LayerMask cursorDetectLayer;
     private void Awake()
     {
         Instance = this;
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePosition = GetMouseWorldPosition();
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-            if (hit && hit.collider.CompareTag("Window"))
-            {
-                currentWindow = hit.collider.GetComponent<WindowResizer>();
-                Debug.Log("HIT A WINDOW");
-            }
-        }
-        
+        SelectWindow();
     }
-    
-    public WindowResizer GetWindowResizer()
+    public void SelectWindow()
+    {
+        Vector3 mousePosition = GetMouseWorldPosition();
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, cursorDetectLayer);
+        if (IsDragging || IsResizing) return;
+        if (hit && (hit.collider.CompareTag("Window") || hit.collider.CompareTag("Border")))
+        {
+            currentWindow = hit.collider.GetComponent<WindowBehavior>();
+            Debug.Log("HIT A WINDOW");
+        }
+        else ChangeCursor(CursorType.Default);
+    }
+    public WindowBehavior GetWindow()
     {
         return currentWindow;
     }

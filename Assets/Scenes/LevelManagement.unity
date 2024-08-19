@@ -667,7 +667,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f426acb140e7e47a60debdc841d5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDragging: 0
+  IsResizing: 0
   cursorArraySO: {fileID: 11400000, guid: 512f850d7de97d545a1e763b5603263f, type: 2}
+  cursorDetectLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &1041201659
 Transform:
   m_ObjectHideFlags: 0
