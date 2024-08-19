@@ -27,9 +27,9 @@ public class VictoryPoint : MonoBehaviour
 
         OnVictory?.Invoke();
     }
+
     IEnumerator CallVictory(int x)
     {
-        victoryScreenAnim.SetBool("On", true);
         yield return new WaitForSeconds(x);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

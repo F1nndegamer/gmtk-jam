@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
     [Header("Specifications")]
     public int levelID;
 
-
     private void Awake()
     {
         if (Instance)
