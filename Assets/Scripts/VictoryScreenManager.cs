@@ -9,7 +9,13 @@ public class VictoryScreenManager : MonoBehaviour
         LevelManagement.Instance.OnVictory += ShowVictoryScreen;
         animator = GetComponent<Animator>();
     }
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
 
+        }
+    }
     void ShowVictoryScreen()
     {
         animator.SetBool("On", true);
