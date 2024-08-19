@@ -6,35 +6,23 @@ using UnityEngine;
 public class WindowSound : MonoBehaviour
 {
     private AudioSource audioSource;
-    [SerializeField] private DragAndDrop dragAndDrop;
-    [SerializeField] private WindowResizer windowResizer;
+    [SerializeField] private WindowBehavior windowBehavior;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>(); 
+        audioSource = GetComponent<AudioSource>();
+        windowBehavior.OnCursorClicked += WindowBehavior_OnCursorClicked;
+        windowBehavior.OnCursorReleased += WindowBehavior_OnCursorReleased;
     }
 
-    private void WindowResizer_OnCursorReleased(object sender, System.EventArgs e)
+    private void WindowBehavior_OnCursorReleased(object sender, System.EventArgs e)
     {
         SoundManager.Instance.PlayReleaseSound();
         audioSource.Pause();
     }
 
-    private void WindowResizer_OnCursorClicked(object sender, System.EventArgs e)
+    private void WindowBehavior_OnCursorClicked(object sender, System.EventArgs e)
     {
         SoundManager.Instance.PlayClickSound();
         audioSource.Play();
     }
-
-    private void DragAndDrop_OnCursorReleased(object sender, System.EventArgs e)
-    {
-        SoundManager.Instance.PlayReleaseSound();
-        audioSource.Pause();
-    }
-
-    private void DragAndDrop_OnCursorClicked(object sender, System.EventArgs e)
-    {
-        SoundManager.Instance.PlayClickSound();
-        audioSource.Play();
-    }
-
 }
