@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] Animator deathScreenAnim;
+    public event System.Action OnDeath;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             Destroy(collision.gameObject);
-            deathScreenAnim.SetBool("On", true);
+            OnDeath.Invoke();
         }
     }
 }

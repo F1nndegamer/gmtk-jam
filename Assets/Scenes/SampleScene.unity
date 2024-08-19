@@ -780,7 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e247b8c9130e944a3ea180a0d74e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathScreenAnim: {fileID: 552588278}
 --- !u!114 &199872762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,6 +1574,7 @@ GameObject:
   - component: {fileID: 552588280}
   - component: {fileID: 552588279}
   - component: {fileID: 552588278}
+  - component: {fileID: 552588281}
   m_Layer: 5
   m_Name: Deathscreen
   m_TagString: Untagged
@@ -1663,6 +1663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552588276}
   m_CullTransparentMesh: 1
+--- !u!114 &552588281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552588276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11af332b32a34d48ac70b8659438275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VictoryPoint: {fileID: 199872761}
 --- !u!1001 &770378756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1777,6 +1790,7 @@ GameObject:
   - component: {fileID: 798233621}
   - component: {fileID: 798233620}
   - component: {fileID: 798233619}
+  - component: {fileID: 798233622}
   m_Layer: 5
   m_Name: VictoryScreen
   m_TagString: Untagged
@@ -1865,6 +1879,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798233617}
   m_CullTransparentMesh: 1
+--- !u!114 &798233622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798233617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9416f57415ce3a74eabf4fd92109432c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VictoryPoint: {fileID: 1035765745}
 --- !u!1 &891454147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a4418727ee1874994cfa87d2aacff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreenAnim: {fileID: 798233619}
 --- !u!58 &1035765746
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2491,7 +2517,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348759701}
-  - component: {fileID: 1348759700}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -2499,18 +2524,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1348759700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348759699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ea809995be9ad44b8d4c3b4e60ca1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1348759701
 Transform:
   m_ObjectHideFlags: 0
