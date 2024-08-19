@@ -8,14 +8,12 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class VictoryPoint : MonoBehaviour
 {
-    public event System.Action OnVictory; //this could be used if another script wants to do something on victory (like enemies stop attacking the player, the player stops listening to inputs, etc).
-
     void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.name == "Player")
         {
             coll.gameObject.SetActive(false);
-            OnVictory.Invoke();
+            LevelManagement.Instance.OnVictory?.Invoke();
         }
     }
 }
