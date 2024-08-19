@@ -14,4 +14,8 @@ public class DeathScreenManager : MonoBehaviour
     {
         animator.SetBool("On", true);
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

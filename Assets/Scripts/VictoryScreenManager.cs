@@ -14,4 +14,8 @@ public class VictoryScreenManager : MonoBehaviour
     {
         animator.SetBool("On", true);
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
