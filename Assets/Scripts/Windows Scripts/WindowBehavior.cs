@@ -58,6 +58,7 @@ public class WindowBehavior : MonoBehaviour
     }
     public void OnDragClick()
     {
+        OnCursorClicked?.Invoke(this, EventArgs.Empty);
         CursorManager.Instance.ChangeCursor(CursorType.Hand_Closed);
         CursorManager.Instance.IsDragging = true;
         distanceFromPosToMousePos = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -87,6 +88,7 @@ public class WindowBehavior : MonoBehaviour
     }
     public void OnResizeClick(ResizeDirection resizeDirection)
     {
+        OnCursorClicked?.Invoke(this, EventArgs.Empty);
         CursorManager.Instance.IsResizing = true;
         originalMousePosition = mousePosition;
         originalScale = transform.localScale;
