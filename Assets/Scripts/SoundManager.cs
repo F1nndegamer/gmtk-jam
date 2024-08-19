@@ -33,28 +33,30 @@ public class SoundManager : MonoBehaviour
         audioSource.volume = volume * volumeMultiplier;
         audioSource.Play();
 
-        // Store reference to allow stopping
-
-        // Destroy the GameObject after the sound is done playing
-        if(audioClip == audioClipRefsSO.Rotating)
+        // Start the StopSoundWhenDone coroutine only for the rotating sound
+        if (audioClip == audioClipRefsSO.Rotating)
         {
-            if (audioClip == audioClipRefsSO.Rotating)
-            {
-                StartCoroutine(StopSoundWhenDone(audioSource));
-            }
+            StartCoroutine(StopSoundWhenDone(audioSource));
+            Debug.Log("rotating");
         }
-        Destroy(audioSource.gameObject, audioClip.length);
+        else
+        {
+            Destroy(audioSource.gameObject, audioClip.length);
+        }
     }
 
     private IEnumerator StopSoundWhenDone(AudioSource audioSource)
     {
         // Wait until the 'turning' is false
-        yield return new WaitUntil(() => !turning);
-
-        // Stop the audio and destroy the game object
-        audioSource.Stop();
-        Destroy(audioSource.gameObject);
+        while (turning)
+        {
+            yield return null;
+            Debug.Log("stop");
+            audioSource.Stop();
+            Destroy(audioSource.gameObject);
+        }
     }
+
     public void PlayClickSound()
     {
         PlaySound(audioClipRefsSO.windowClick, Vector3.zero);
