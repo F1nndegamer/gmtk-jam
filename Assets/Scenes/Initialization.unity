@@ -238,7 +238,7 @@ MonoBehaviour:
   sceneTransitionTime: 0.8
   levelManagerID: 6
   sceneTransitionAnim: {fileID: 1197564982}
-  currentLevel: 0
+  currentLevel: 1
 --- !u!114 &617278772
 MonoBehaviour:
   m_ObjectHideFlags: 0

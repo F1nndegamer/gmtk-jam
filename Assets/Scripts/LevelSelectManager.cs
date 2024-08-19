@@ -8,7 +8,7 @@ public class LevelSelectManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = levelSelectButtons.Length - 1; i > PersistentManagement.Instance.currentLevel; i--)
+        for (int i = levelSelectButtons.Length - 1; i > PersistentManagement.Instance.currentLevel - 1; i--)
         {
             levelSelectButtons[i].interactable = false;
         }
