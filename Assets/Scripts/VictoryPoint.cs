@@ -6,9 +6,6 @@ using UnityEngine;
 /// </summary>
 public class VictoryPoint : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] Animator victoryScreenAnim;
-
     public event System.Action OnVictory; //this could be used if another script wants to do something on victory (like enemies stop attacking the player, the player stops listening to inputs, etc).
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -24,8 +21,7 @@ public class VictoryPoint : MonoBehaviour
     /// </summary>
     void CallVictory()
     {
-        victoryScreenAnim.SetBool("On", true);
-        PersistentManagement.Instance.currentLevel++;
+        if(PersistentManagement.Instance.currentLevel == LevelManager.Instance.levelID) PersistentManagement.Instance.currentLevel++;
 
         OnVictory?.Invoke();
     }

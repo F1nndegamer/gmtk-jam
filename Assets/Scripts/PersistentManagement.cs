@@ -15,7 +15,9 @@ public class PersistentManagement : MonoBehaviour
     [Header("References")]
     [SerializeField] Animator sceneTransitionAnim; 
     [Header("Data")]
-    public int currentLevel;
+    public int currentLevel = 1;
+
+    public event System.Action OnAdditiveLoaded;
 
     void Awake()
     {
@@ -68,12 +70,19 @@ public class PersistentManagement : MonoBehaviour
             yield return null;
         }
 
-        LoadAdditiveScene(additiveRequest);
+        StartCoroutine(LoadSceneAdditively(additiveRequest));
     }
 
-    void LoadAdditiveScene(int sceneID)
+    IEnumerator LoadSceneAdditively(int sceneID)
     {
-        SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
+        AsyncOperation additive = SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
+
+        while (!additive.isDone)
+        {
+            yield return null;
+        }
+
+        OnAdditiveLoaded?.Invoke();
     }
 
     void SceneLoaded(Scene scene1, Scene scene2)
