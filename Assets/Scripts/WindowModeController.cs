@@ -19,7 +19,8 @@ public class WindowModeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) ChangeMode();
+        if (Input.GetKeyDown(KeyCode.F)) 
+            ChangeMode();
         if (mode == GrapOrSize.SizeMode)
             windowResizer.SizerFunc();
         if (mode == GrapOrSize.GrapMode)

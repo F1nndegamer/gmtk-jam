@@ -7,7 +7,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        mixer.SetFloat("volume", volume);
+        mixer.SetFloat("volume", volume - 80);
     }
     public void SetFullScreen(bool isFullScreen)
     {
