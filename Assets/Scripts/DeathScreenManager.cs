@@ -17,7 +17,7 @@ public class DeathScreenManager : MonoBehaviour
     }
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
     public void Restrat()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VictoryScreenManager : MonoBehaviour
 {
@@ -28,6 +29,6 @@ public class VictoryScreenManager : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
 }
