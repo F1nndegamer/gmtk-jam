@@ -14,4 +14,10 @@ public class Trap : MonoBehaviour
             SoundManager.Instance.PlaySpikeDeath();
         }
     }
+    public void Death(GameObject gameObject)
+    {
+        Destroy(gameObject);
+        LevelManagement.Instance.OnDeath?.Invoke();
+        SoundManager.Instance.PlaySpikeDeath();
+    }
 }

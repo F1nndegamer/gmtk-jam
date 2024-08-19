@@ -23,13 +23,11 @@ public class MachineAndKey : MonoBehaviour
         Debug.Log(allTrue);
         if (allTrue)
         {
-            machineObject.GetComponent<BoxCollider2D>().enabled = false;
-            machineObject.GetComponent<SpriteRenderer>().enabled = false;
+            machineObject.GetComponent<LineRenderer>().enabled = false;
         }
         else
         {
-            machineObject.GetComponent<BoxCollider2D>().enabled = true;
-            machineObject.GetComponent<SpriteRenderer>().enabled = true;
+            machineObject.GetComponent<LineRenderer>().enabled = true;
         }
 
     }
