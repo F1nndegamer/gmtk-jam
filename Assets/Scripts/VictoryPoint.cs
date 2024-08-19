@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// The script controling the victory point's behaviour.
@@ -15,18 +17,24 @@ public class VictoryPoint : MonoBehaviour
     {
         if(coll.name == "Player")
         {
-            CallVictory();
+            StartCoroutine(CallVictory(2));
         }
     }
 
     /// <summary>
     /// Gets called when the player gets to the victory point.
     /// </summary>
-    void CallVictory()
+    void CallVictorya()
     {
         victoryScreenAnim.SetBool("On", true);
         PersistentManagement.Instance.currentLevel++;
 
         OnVictory?.Invoke();
+    }
+    IEnumerator CallVictory(int x)
+    {
+        victoryScreenAnim.SetBool("On", true);
+        yield return new WaitForSeconds(x);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
