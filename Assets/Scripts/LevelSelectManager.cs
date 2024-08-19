@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("References")]
+    [SerializeField] Button[] levelSelectButtons;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = levelSelectButtons.Length - 1; i > PersistentManagement.Instance.currentLevel; i--)
+        {
+            levelSelectButtons[i].interactable = false;
+        }
     }
 }

@@ -14,6 +14,9 @@ public class VictoryPoint : MonoBehaviour
         {
             coll.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             coll.gameObject.GetComponent<PlayerMovement>().enabled = false;
+
+            if (PersistentManagement.Instance.currentLevel == LevelInstance.Instance.levelInstanceID) PersistentManagement.Instance.currentLevel++;
+
             LevelManagement.Instance.OnVictory?.Invoke();
         }
     }
