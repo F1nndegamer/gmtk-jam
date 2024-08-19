@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class VisibilityMark : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class VisibilityMark : MonoBehaviour
         if (other.CompareTag("Window"))
         {
             isColliding = true;
+            SoundManager.Instance.PlayTurnStart(transform);
+            SoundManager.Instance.PlayTurning(transform);
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -51,6 +54,7 @@ public class VisibilityMark : MonoBehaviour
         if (other.CompareTag("Window"))
         {
             isColliding = true;
+            SoundManager.Instance.turning = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -58,6 +62,8 @@ public class VisibilityMark : MonoBehaviour
         if (other.CompareTag("Window"))
         {
             isColliding = false;
+            SoundManager.Instance.PlayTurnStart(transform);
+            SoundManager.Instance.turning = false;
         }
     }
 }

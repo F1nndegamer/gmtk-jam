@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e247b8c9130e944a3ea180a0d74e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreenAnim: {fileID: 2135979051}
 --- !u!1 &405778575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1986740974623191715, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
@@ -1123,7 +1124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a4418727ee1874994cfa87d2aacff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreenAnim: {fileID: 0}
 --- !u!58 &1035765746
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1463,6 +1463,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &2135979051 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2532076543322996081, guid: 39d36091088a46e46838d5faa15383f9, type: 3}
+  m_PrefabInstance: {fileID: 152120003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

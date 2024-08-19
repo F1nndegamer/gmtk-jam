@@ -5,5 +5,8 @@ public class AudioClipRefsSO : ScriptableObject
 {
     public AudioClip windowClick;
     public AudioClip windowRelease;
+    public AudioClip SpikeDeath;
+    public AudioClip Rotating;
+    public AudioClip SpinStart;
     public AudioClip[] footstep;
 }

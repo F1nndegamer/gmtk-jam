@@ -11,6 +11,7 @@ public class Trap : MonoBehaviour
         {
             Destroy(collision.gameObject);
             LevelManagement.Instance.OnDeath?.Invoke();
+            SoundManager.Instance.PlaySpikeDeath();
         }
     }
 }
