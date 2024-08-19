@@ -7,8 +7,9 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
-    [Header("References")]
-    public VictoryPoint victoryPoint;
+    [Header("Specifications")]
+    public int levelID;
+
 
     private void Awake()
     {
