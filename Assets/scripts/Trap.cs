@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Trap : MonoBehaviour
 {
+    [SerializeField] Animator deathScreenAnim;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Destroy(collision.gameObject);
+            StartCoroutine(CallDeath(2));
         }
+    }
+    IEnumerator CallDeath(int x)
+    {
+        deathScreenAnim.SetBool("On", true);
+        yield return new WaitForSeconds(x);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
