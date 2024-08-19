@@ -10,10 +10,20 @@ public class ResetButton : MonoBehaviour
         {
             RessetButton();
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ReturnToMenu();
+        }
     }
 
     public void RessetButton()
     {
         PersistentManagement.Instance.LoadLevel(LevelInstance.Instance.levelInstanceID + 1);
+    }
+
+    public void ReturnToMenu()
+    {
+        PersistentManagement.Instance.LoadScene(1);
     }
 }
