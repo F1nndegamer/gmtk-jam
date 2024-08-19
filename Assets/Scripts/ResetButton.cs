@@ -8,11 +8,12 @@ public class ResetButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            RessetButton();
         }
     }
+
     public void RessetButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PersistentManagement.Instance.LoadLevel(LevelInstance.Instance.levelInstanceID + 1);
     }
 }

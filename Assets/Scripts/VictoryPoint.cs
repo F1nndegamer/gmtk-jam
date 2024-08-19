@@ -12,7 +12,11 @@ public class VictoryPoint : MonoBehaviour
     {
         if(coll.name == "Player")
         {
-            coll.gameObject.SetActive(false);
+            coll.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            coll.gameObject.GetComponent<PlayerMovement>().enabled = false;
+
+            if (PersistentManagement.Instance.currentLevel == LevelInstance.Instance.levelInstanceID) PersistentManagement.Instance.currentLevel++;
+
             LevelManagement.Instance.OnVictory?.Invoke();
         }
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathScreenManager : MonoBehaviour
 {
@@ -17,5 +18,9 @@ public class DeathScreenManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    public void Restrat()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
