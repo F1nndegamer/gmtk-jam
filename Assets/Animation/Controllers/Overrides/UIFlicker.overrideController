@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIFlicker
+  m_Controller: {fileID: 9100000, guid: 124cc49f11006db4dadb93f1892f4c7a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2e36646ebfb78e1419424b37b5901b36, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d7df9c5bae0d1b44091d590c76c66dba, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9d5a08d8e00975442aa0a1f6e12452cd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b894ad27a51f1e741800a1147dd1be21, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 683c23fb3d543ec40947b36e9c2c7f84, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3f2787200ee312a419c3fd87b9c09c45, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1f75341f1e85c24aa666449233124cd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3e996cd788f8c7b4088ae6e63d572e51, type: 2}

@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 798233620}
   - component: {fileID: 798233619}
   - component: {fileID: 798233622}
+  - component: {fileID: 798233623}
   m_Layer: 5
   m_Name: VictoryScreen
   m_TagString: Untagged
@@ -591,7 +592,7 @@ Animator:
   m_GameObject: {fileID: 798233617}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: a4d77d28a2760e547aa2674ad8ae1c32, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0358db85b43be044aa608d03d2088119, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -652,6 +653,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9416f57415ce3a74eabf4fd92109432c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &798233623
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798233617}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &922830174
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +678,7 @@ GameObject:
   - component: {fileID: 922830177}
   - component: {fileID: 922830176}
   - component: {fileID: 922830179}
+  - component: {fileID: 922830180}
   m_Layer: 5
   m_Name: DeathScreen
   m_TagString: Untagged
@@ -703,7 +717,7 @@ Animator:
   m_GameObject: {fileID: 922830174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: a4d77d28a2760e547aa2674ad8ae1c32, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0358db85b43be044aa608d03d2088119, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -764,6 +778,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11af332b32a34d48ac70b8659438275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &922830180
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922830174}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1038759454
 GameObject:
   m_ObjectHideFlags: 0
