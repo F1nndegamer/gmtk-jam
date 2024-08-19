@@ -14,7 +14,7 @@ public class VictoryScreenManager : MonoBehaviour
 
     private void Update()
     {
-        if (visible && Input.anyKey)
+        if (visible && Input.anyKeyDown)
         {
             PersistentManagement.Instance.LoadLevel(PersistentManagement.Instance.currentLevel + 1);
             visible = false;
