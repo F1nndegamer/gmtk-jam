@@ -11,13 +11,7 @@ public class Trap : MonoBehaviour
         if (collision.tag == "Player")
         {
             Destroy(collision.gameObject);
-            StartCoroutine(CallDeath(2));
+            deathScreenAnim.SetBool("On", true);
         }
-    }
-    IEnumerator CallDeath(int x)
-    {
-        deathScreenAnim.SetBool("On", true);
-        yield return new WaitForSeconds(x);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
