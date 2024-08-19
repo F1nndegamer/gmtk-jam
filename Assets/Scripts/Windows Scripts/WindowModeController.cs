@@ -8,12 +8,12 @@ public class WindowModeController : MonoBehaviour
     [SerializeField] private GrapOrSize mode;
 
     WindowResizer windowResizer;
-    DragAndDrop dragAndDrop;
+
     // Start is called before the first frame update
     void Start()
     {
         windowResizer = GetComponent<WindowResizer>();
-        dragAndDrop = GetComponent<DragAndDrop>();
+
     }
 
     // Update is called once per frame
