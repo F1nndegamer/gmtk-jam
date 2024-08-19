@@ -1472,8 +1472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c9e1516dc347a4692c19c6d307a6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragAndDrop: {fileID: 0}
-  windowResizer: {fileID: 0}
+  windowBehavior: {fileID: 2588946386505308555}
 --- !u!1 &7947406461310795453
 GameObject:
   m_ObjectHideFlags: 0
