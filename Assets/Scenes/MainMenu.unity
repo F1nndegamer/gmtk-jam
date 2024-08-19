@@ -1098,7 +1098,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1293,7 +1293,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2627,7 +2627,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3002,7 +3002,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3167,7 +3167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4301,7 +4301,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4868,7 +4868,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5641,7 +5641,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1530419967}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

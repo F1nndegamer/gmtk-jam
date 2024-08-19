@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class UIFunctions : MonoBehaviour
 {
-    public void LoadScene(string sceneID)
+    public void LoadScene(int sceneID)
     {
         PersistentManagement.Instance.LoadScene(sceneID);
     }
 
-    public void LoadScene(int sceneID)
+    public void LoadLevel(int levelID)
     {
-        PersistentManagement.Instance.LoadScene(sceneID);
+        PersistentManagement.Instance.LoadLevel(levelID);
     }
 
     public void PauseTheGame()

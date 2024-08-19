@@ -11,6 +11,7 @@ public class PersistentManagement : MonoBehaviour
 
     [Header("Specifications")]
     [SerializeField] float sceneTransitionTime;
+    [SerializeField] int levelManagerID;
     [Header("References")]
     [SerializeField] Animator sceneTransitionAnim; 
     [Header("Data")]
@@ -42,11 +43,11 @@ public class PersistentManagement : MonoBehaviour
         StartCoroutine(LoadSceneDelayed(sceneID, sceneTransitionTime));
     }
 
-    public void LoadScene(string sceneID)
+    public void LoadLevel(int levelID)
     {
         sceneTransitionAnim.SetBool("On", true);
 
-        StartCoroutine(LoadSceneDelayed(sceneID, sceneTransitionTime));
+        StartCoroutine(LoadSceneDelayed(levelManagerID, levelID, sceneTransitionTime));
     }
 
     IEnumerator LoadSceneDelayed(int sceneID, float delay)
@@ -56,11 +57,23 @@ public class PersistentManagement : MonoBehaviour
         SceneManager.LoadScene(sceneID);
     }
 
-    IEnumerator LoadSceneDelayed(string sceneID, float delay)
+    IEnumerator LoadSceneDelayed(int sceneID, int additiveRequest, float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        SceneManager.LoadScene(sceneID);
+        AsyncOperation mainSceneLoad = SceneManager.LoadSceneAsync(sceneID);
+
+        while (!mainSceneLoad.isDone)
+        {
+            yield return null;
+        }
+
+        LoadAdditiveScene(additiveRequest);
+    }
+
+    void LoadAdditiveScene(int sceneID)
+    {
+        SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
     }
 
     void SceneLoaded(Scene scene1, Scene scene2)
