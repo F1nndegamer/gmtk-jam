@@ -9,4 +9,6 @@ public class AudioClipRefsSO : ScriptableObject
     public AudioClip Rotating;
     public AudioClip SpinStart;
     public AudioClip[] footstep;
+    public AudioClip victory;
+    public AudioClip error;
 }

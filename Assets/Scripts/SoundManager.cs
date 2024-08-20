@@ -86,4 +86,9 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(audioClipRefsSO.Rotating, rotatepos.position);
     }
+
+    public void PlayError()
+    {
+        PlaySound(audioClipRefsSO.error, Vector3.zero);
+    }
 }
