@@ -28,7 +28,7 @@ public class ScaleWithWindow : MonoBehaviour
         {
             case ScaleMode.Uniform:
                 //float uniformScale = Mathf.Max(newScale.x, newScale.y);
-                transform.localScale = new Vector3(newScale.x, newScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Clamp(newScale.x, 0.2f, Mathf.Infinity), Mathf.Clamp(newScale.y, 0.2f, Mathf.Infinity), transform.localScale.z);
                 break;
             case ScaleMode.Independant:
                 switch (scalingAxis)
@@ -46,11 +46,9 @@ public class ScaleWithWindow : MonoBehaviour
                 break;
         }
 
-        /*
         if (transform.localScale.x < 0.2f && transform.localScale.y < 0.2f)
         {
             Destroy(gameObject);
         }
-        */
     }
 }
