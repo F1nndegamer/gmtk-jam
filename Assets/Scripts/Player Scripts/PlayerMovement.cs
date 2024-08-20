@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         moveDir = new Vector2(horizontal * speed, rb2d.velocity.y);
-        rb2d.velocity = moveDir + environmentVelocity;
+        rb2d.velocity = new Vector2(moveDir.x + environmentVelocity.x, rb2d.velocity.y);
         if (Mathf.Abs(moveDir.x) > 0.01f)
         {
             transform.rotation = Quaternion.Euler(0, horizontal > 0 ? 0 : 180, 0);
