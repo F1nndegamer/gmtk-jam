@@ -24,10 +24,12 @@ public class MachineAndKey : MonoBehaviour
         if (allTrue)
         {
             machineObject.GetComponent<LineRenderer>().enabled = false;
+            machineObject.GetComponent<Laser>().enabled = false;
         }
         else
         {
             machineObject.GetComponent<LineRenderer>().enabled = true;
+            machineObject.GetComponent<Laser>().enabled = true;
         }
 
     }
