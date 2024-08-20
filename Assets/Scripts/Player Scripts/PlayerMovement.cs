@@ -57,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
     {
         return Mathf.Abs(moveDir.x) > 0.01f && isGrounded;
     }
+    public bool IsJumping()
+    {
+        return !isGrounded && rb2d.velocity.y > 0;
+    }
+
     public void SetEnvironmentVelocity(Vector2 velocity)
     {
         environmentVelocity = velocity;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerVisual : MonoBehaviour
 {
     private const string IS_WALKING = "IsWalking";
+    private const string IS_JUMPING = "IsJumping";
     [SerializeField] private PlayerMovement playerMovement;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -16,5 +17,6 @@ public class PlayerVisual : MonoBehaviour
     private void Update()
     {
         animator.SetBool(IS_WALKING, playerMovement.IsWalking());
+        animator.SetBool(IS_JUMPING, playerMovement.IsJumping());
     }
 }
