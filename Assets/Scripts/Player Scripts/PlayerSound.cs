@@ -7,6 +7,7 @@ public class PlayerSound : MonoBehaviour
     private PlayerMovement playerMovement;
     private float footstepTimer;
     private float footstepTimerMax = 0.15f;
+    private bool jumping;
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -21,6 +22,16 @@ public class PlayerSound : MonoBehaviour
             {
                 SoundManager.Instance.PlayFootStepSound(transform.position);
             }
+            if (playerMovement.IsJumping() && !jumping)
+            {
+                SoundManager.Instance.PlayFootStepSound(transform.position);
+                jumping = true;
+            }
+            if (!playerMovement.IsJumping())
+            {
+                jumping = false;
+            }
         }
+        
     }
 }

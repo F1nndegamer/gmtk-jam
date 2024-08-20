@@ -32,7 +32,9 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
             rb2d.AddForce(new Vector2(rb2d.velocity.x, jumpForce), ForceMode2D.Impulse);
+        }
         if (rb2d.velocity.y < 0)
             rb2d.gravityScale = 1.5f * 3f;
         else
@@ -58,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public bool IsJumping()
     {
-        return !isGrounded && rb2d.velocity.y > 0;
+        return !isGrounded;
     }
 
     public void SetEnvironmentVelocity(Vector2 velocity)
