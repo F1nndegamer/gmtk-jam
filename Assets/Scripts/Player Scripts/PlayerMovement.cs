@@ -14,11 +14,19 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 moveDir;
     private float horizontal;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        LevelManagement.Instance.OnVictory += StopMovement;
     }
-
+    private void StopMovement()
+    {
+        Debug.Log("stopmovement");
+        horizontal = 0;
+        moveDir = Vector2.zero;
+        rb2d.velocity = Vector2.zero;
+    }
     // Update is called once per frame
     void Update()
     {
