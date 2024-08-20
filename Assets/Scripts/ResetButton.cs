@@ -24,6 +24,7 @@ public class ResetButton : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        Destroy(FindObjectOfType<MusicManager>().gameObject);
         PersistentManagement.Instance.LoadScene(1);
     }
 }
