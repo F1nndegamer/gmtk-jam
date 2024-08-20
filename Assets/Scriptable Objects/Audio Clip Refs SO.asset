@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowClick: {fileID: 8300000, guid: 93a584cd618655c46b6991e7a4867b7a, type: 3}
   windowRelease: {fileID: 8300000, guid: 19a2c1b30819be849862a8244d883e26, type: 3}
-  SpikeDeath: {fileID: 0}
+  SpikeDeath: {fileID: 8300000, guid: 17ba1bdb2fa86e24ba3c931e7bc2c149, type: 3}
   Rotating: {fileID: 8300000, guid: 99ea4b8c55d958e43b9db3d9d5289b81, type: 3}
   SpinStart: {fileID: 8300000, guid: 101aa3909a06e3d4b89d6d0383ff8414, type: 3}
   footstep:
