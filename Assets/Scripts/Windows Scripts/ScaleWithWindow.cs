@@ -27,8 +27,8 @@ public class ScaleWithWindow : MonoBehaviour
         switch (scaleMode)
         {
             case ScaleMode.Uniform:
-                float uniformScale = Mathf.Max(newScale.x, newScale.y);
-                transform.localScale = new Vector3(uniformScale, uniformScale, transform.localScale.z);
+                //float uniformScale = Mathf.Max(newScale.x, newScale.y);
+                transform.localScale = new Vector3(newScale.x, newScale.y, transform.localScale.z);
                 break;
             case ScaleMode.Independant:
                 switch (scalingAxis)
@@ -37,18 +37,20 @@ public class ScaleWithWindow : MonoBehaviour
                         transform.localScale = new Vector3(newScale.x, newScale.y, transform.localScale.z);
                         break;
                     case IndependantAxis.X:
-                        transform.localScale = new Vector3(Mathf.Max(newScale.x, newScale.y), transform.localScale.y, transform.localScale.z);
+                        transform.localScale = new Vector3(newScale.x, transform.localScale.y, transform.localScale.z);
                         break;
                     case IndependantAxis.Y:
-                        transform.localScale = new Vector3(transform.localScale.x, Mathf.Max(newScale.x, newScale.y), transform.localScale.z);
+                        transform.localScale = new Vector3(transform.localScale.x, newScale.y, transform.localScale.z);
                         break;
                 }
                 break;
         }
 
+        /*
         if (transform.localScale.x < 0.2f && transform.localScale.y < 0.2f)
         {
             Destroy(gameObject);
         }
+        */
     }
 }

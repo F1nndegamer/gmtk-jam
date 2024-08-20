@@ -16,6 +16,7 @@ public class PersistentManagement : MonoBehaviour
     [SerializeField] Animator sceneTransitionAnim; 
     [Header("Data")]
     public int currentLevel = 1;
+    public bool introDone;
 
     public event System.Action OnAdditiveLoaded;
 
