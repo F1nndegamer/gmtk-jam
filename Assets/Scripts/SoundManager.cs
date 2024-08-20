@@ -91,4 +91,8 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(audioClipRefsSO.error, Vector3.zero);
     }
+    public void PlayUIClick()
+    {
+        PlaySound(audioClipRefsSO.UIClick, Vector3.zero);
+    }
 }
