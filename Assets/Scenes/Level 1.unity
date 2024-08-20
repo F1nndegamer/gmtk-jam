@@ -838,6 +838,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 3361408689376775343, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.30713776
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361408689376775343, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.49744615
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361408689376775343, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     - target: {fileID: 3435638784226885410, guid: ef95c3f7304ca9c41bd8bda40d87968f, type: 3}
       propertyPath: m_Name
       value: MaskWindow (1)
