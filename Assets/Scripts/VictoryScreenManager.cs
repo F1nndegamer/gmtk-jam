@@ -14,7 +14,7 @@ public class VictoryScreenManager : MonoBehaviour
 
     private void Update()
     {
-        if (visible && Input.anyKeyDown)
+        if (visible && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.R))
         {
             PersistentManagement.Instance.LoadLevel(PersistentManagement.Instance.currentLevel + 1);
             visible = false;
