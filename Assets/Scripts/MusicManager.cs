@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    MusicManager instance;
+    static MusicManager instance;
     // Start is called before the first frame update
     private void Awake()
     {
