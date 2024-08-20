@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowClick: {fileID: 8300000, guid: 93a584cd618655c46b6991e7a4867b7a, type: 3}
   windowRelease: {fileID: 8300000, guid: 19a2c1b30819be849862a8244d883e26, type: 3}
+  SpikeDeath: {fileID: 0}
+  Rotating: {fileID: 0}
+  SpinStart: {fileID: 0}
   footstep:
   - {fileID: 8300000, guid: 013f6200c08ab1042859d19ece7bb36c, type: 3}
   - {fileID: 8300000, guid: 8c6f8e172e45772478cf0be76e68ef59, type: 3}
   - {fileID: 8300000, guid: 9b73a4b50e88dc64592efbd086d8bca5, type: 3}
   - {fileID: 8300000, guid: b5da2cafb0f8be9449f2e70f2e237070, type: 3}
+  victory: {fileID: 8300000, guid: cfbeb36a52e6fba4593d125263603218, type: 3}
+  error: {fileID: 8300000, guid: 408f27df6ccb4d446b1938c256b6b1db, type: 3}
