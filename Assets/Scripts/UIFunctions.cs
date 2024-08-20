@@ -16,6 +16,11 @@ public class UIFunctions : MonoBehaviour
         PersistentManagement.Instance.LoadLevel(levelID);
     }
 
+    public void RegisterIntro()
+    {
+        PersistentManagement.Instance.introDone = true;
+    }
+
     public void PauseTheGame()
     {
         if (Time.timeScale == 0f)
