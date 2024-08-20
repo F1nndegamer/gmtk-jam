@@ -15,8 +15,8 @@ MonoBehaviour:
   windowClick: {fileID: 8300000, guid: 93a584cd618655c46b6991e7a4867b7a, type: 3}
   windowRelease: {fileID: 8300000, guid: 19a2c1b30819be849862a8244d883e26, type: 3}
   SpikeDeath: {fileID: 0}
-  Rotating: {fileID: 0}
-  SpinStart: {fileID: 0}
+  Rotating: {fileID: 8300000, guid: 99ea4b8c55d958e43b9db3d9d5289b81, type: 3}
+  SpinStart: {fileID: 8300000, guid: 101aa3909a06e3d4b89d6d0383ff8414, type: 3}
   footstep:
   - {fileID: 8300000, guid: 013f6200c08ab1042859d19ece7bb36c, type: 3}
   - {fileID: 8300000, guid: 8c6f8e172e45772478cf0be76e68ef59, type: 3}
@@ -24,3 +24,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b5da2cafb0f8be9449f2e70f2e237070, type: 3}
   victory: {fileID: 8300000, guid: cfbeb36a52e6fba4593d125263603218, type: 3}
   error: {fileID: 8300000, guid: 408f27df6ccb4d446b1938c256b6b1db, type: 3}
+  UIClick:
+  - {fileID: 8300000, guid: c97a4d007631fea45915348fee70c041, type: 3}
+  - {fileID: 8300000, guid: 8d7c00c7882f1f44fa02b84a51b94a00, type: 3}
+  - {fileID: 8300000, guid: 85c3d62efc0e06d469a91b51dc65f982, type: 3}
+  - {fileID: 8300000, guid: 8c6f8e172e45772478cf0be76e68ef59, type: 3}

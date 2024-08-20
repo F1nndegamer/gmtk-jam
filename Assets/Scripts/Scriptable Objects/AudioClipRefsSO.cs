@@ -11,4 +11,5 @@ public class AudioClipRefsSO : ScriptableObject
     public AudioClip[] footstep;
     public AudioClip victory;
     public AudioClip error;
+    public AudioClip[] UIClick;
 }
